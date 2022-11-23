@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import "./write.css";
 import axios from "axios";
 import { Context } from "../../context/Context";
 
@@ -17,29 +16,29 @@ export default function Write() {
       desc,
     };
     if (file) {
-      const data =new FormData();
+      const data = new FormData();
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
       newPost.photo = filename;
       try {
         await axios.post("/upload", data);
-      } catch (err) {}
+      } catch (err) { }
     }
     try {
       const res = await axios.post("/posts", newPost);
       window.location.replace("/post/" + res.data._id);
-    } catch (err) {}
+    } catch (err) { }
   };
   return (
-    <div className="write">
+    <div className="pt-12">
       {file && (
-        <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
+        <img className="ml-36 w-[80vw] h-80 rounded-xl object-cover" src={URL.createObjectURL(file)} alt="" />
       )}
-      <form className="writeForm" onSubmit={handleSubmit}>
-        <div className="writeFormGroup">
+      <form className="relative" onSubmit={handleSubmit}>
+        <div className="flex ml-36 item-center">
           <label htmlFor="fileInput">
-            <i className="writeIcon fas fa-plus"></i>
+            <i className="w-8 h-8 flex items-center justify-center text-xl text-white cursor-pointer mt-[22px] fa-regular fa-image"></i>
           </label>
           <input
             type="file"
@@ -50,20 +49,20 @@ export default function Write() {
           <input
             type="text"
             placeholder="Title"
-            className="writeInput"
+            className="text-3xl border-none p-5 w-[70vw] focus:outline-none bg-biru-abu"
             autoFocus={true}
-            onChange={e=>setTitle(e.target.value)}
+            onChange={e => setTitle(e.target.value)}
           />
         </div>
-        <div className="writeFormGroup">
+        <div className="flex ml-36 item-center">
           <textarea
             placeholder="Tell your story..."
             type="text"
-            className="writeInput writeText"
-            onChange={e=>setDesc(e.target.value)}
+            className="text-xl h-[100vw] border-none p-5 w-[70vw] focus:outline-none bg-biru-abu"
+            onChange={e => setDesc(e.target.value)}
           ></textarea>
         </div>
-        <button className="writeSubmit" type="submit">
+        <button className="absolute top-5 right-[150px] text-white bg-biru-tombol p-[10px] border-none cursor-pointer text-base rounded-md hover:bg-kuning hover:text-black" type="submit">
           Publish
         </button>
       </form>

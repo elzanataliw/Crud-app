@@ -14,7 +14,7 @@ export default function Sidebar() {
     getCats();
   }, []);
   return (
-    <div className="m-20 p-7 bg-abu-abu rounded-lg flex flex-col items-center">
+    <div className="sidebar m-5 p-7 bg-abu-abu rounded-lg flex flex-col items-center">
       <div className="flex flex-col items-center">
         <span className="m-2 p-1 w-4/5 border-y-white border-y-2 text-xs text-white font-semibold leading-5 text-center">ABOUT ME</span>
         <img

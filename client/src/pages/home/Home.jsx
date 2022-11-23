@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="flex">
+      <div className="flex mx-10">
         <Posts posts={posts} />
         <Sidebar />
       </div>
