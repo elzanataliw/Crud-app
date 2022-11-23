@@ -41,5 +41,13 @@ code {
   .sidebar {
     flex: 3;
   }
+
+  .settingsWrapper {
+    flex: 9;
+  }
+
+  .BackgroundRegisterLogin {
+    background-image: url('./assets/background.png')
+  }
   
 }

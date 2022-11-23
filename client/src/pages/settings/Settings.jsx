@@ -1,5 +1,5 @@
-import "./settings.css";
 import Sidebar from "../../components/sidebar/Sidebar";
+import NavBar from "../../components/navbar/NavBar";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
@@ -42,59 +42,64 @@ export default function Settings() {
     }
   };
   return (
-    <div className="settings">
-      <div className="settingsWrapper">
-        <div className="settingsTitle">
-          <span className="settingsUpdateTitle">Update Your Account</span>
-          <span className="settingsDeleteTitle">Delete Account</span>
-        </div>
-        <form className="settingsForm" onSubmit={handleSubmit}>
-          <label>Profile Picture</label>
-          <div className="settingsPP">
-            <img
-              src={file ? URL.createObjectURL(file) : PF + user.profilePic}
-              alt=""
-            />
-            <label htmlFor="fileInput">
-              <i className="settingsPPIcon far fa-user-circle"></i>
-            </label>
-            <input
-              type="file"
-              id="fileInput"
-              style={{ display: "none" }}
-              onChange={(e) => setFile(e.target.files[0])}
-            />
+    <>
+      <NavBar />
+      <div className="flex ml-3 mt-3">
+        <div className="settingsWrapper p-5">
+          <div className="flex items-center justify-between">
+            <span className="text-3xl mb-5">Settings</span>
           </div>
-          <label>Username</label>
-          <input
-            type="text"
-            placeholder={user.username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder={user.email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label>Password</label>
-          <input
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button className="settingsSubmit" type="submit">
-            Update
-          </button>
-          {success && (
-            <span
-              style={{ color: "green", textAlign: "center", marginTop: "20px" }}
-            >
-              Profile has been updated...
-            </span>
-          )}
-        </form>
+          <form className="flex flex-col" onSubmit={handleSubmit}>
+            <label>Profile Picture</label>
+            <div className="flex items-center my-2 mx-0">
+              <img
+                src={file ? URL.createObjectURL(file) : PF + user.profilePic}
+                alt="" className="w-20 h-20 rounded-2xl object-cover"
+              />
+              <label htmlFor="fileInput">
+                <i className="w-12 h-12 text-white items-center flex justify-center ml-3 cursor-pointer fa-solid fa-user-pen hover:text-kuning"></i>
+              </label>
+              <input
+                type="file"
+                id="fileInput"
+                style={{ display: "none" }}
+                onChange={(e) => setFile(e.target.files[0])}
+              />
+            </div>
+            <label className="mt-5">Username</label>
+            <input
+              type="text"
+              placeholder={user.username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="outline-none mt-1 w-[350px] bg-biru-abu border-b-[1px] border-b-white placeholder:text-biru-muda"
+            />
+            <label className="mt-5">Email</label>
+            <input
+              type="email"
+              placeholder={user.email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="outline-none mt-1 w-[350px] bg-biru-abu border-b-[1px] border-b-white placeholder:text-biru-muda"
+            />
+            <label className="mt-5">Password</label>
+            <input
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              className="outline-none mt-1 w-[350px] bg-biru-abu border-b-[1px] border-b-white"
+            />
+            <button className="w-[150px] self-start rounded-lg text-white bg-biru-tombol p-2 mt-9 cursor-pointer hover:bg-kuning hover:text-black" type="submit">
+              Update
+            </button>
+            {success && (
+              <span
+                style={{ color: "green", textAlign: "center", marginTop: "20px" }}
+              >
+                Profile has been updated...
+              </span>
+            )}
+          </form>
+        </div>
+        <Sidebar />
       </div>
-      <Sidebar />
-    </div>
+    </>
   );
 }

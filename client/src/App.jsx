@@ -15,11 +15,10 @@ function App() {
   return (
     <>
       <ContextProvider>
-        <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/register" element={user ? <Navigate to="/" /> : <Register />} />
-          <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/write" element={user ? <Write /> : <Register />} />
           <Route path="/settings" element={user ? <Settings /> : <Register />} />
           <Route path="/post/:postId" element={<Single />} />

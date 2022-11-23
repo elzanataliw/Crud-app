@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Posts from "../../components/posts/Posts";
 import Sidebar from "../../components/sidebar/Sidebar";
+import NavBar from "../../components/navbar/NavBar";
 import axios from "axios";
 import { useLocation } from "react-router";
 
@@ -18,6 +19,7 @@ export default function Home() {
   }, [search]);
   return (
     <>
+      <NavBar />
       <Header />
       <div className="flex mx-10">
         <Posts posts={posts} />
