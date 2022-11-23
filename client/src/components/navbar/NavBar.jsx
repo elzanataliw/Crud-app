@@ -12,7 +12,7 @@ export default function NavBar() {
   };
   return (
     <div className="h-20 ml-5 mr-5 bg-biru-muda sticky mt-5 flex items-center rounded-lg">
-      <div className="justify-start pl-9 flex-auto">
+      <div className="justify-start pl-9 flex-1">
         <img src={L} alt="" className="scale-90" />
       </div>
       <div className="flex-auto">
@@ -42,7 +42,7 @@ export default function NavBar() {
           </li>
         </ul>
       </div>
-      <div className="flex flex-auto items-center justify-end pr-9">
+      <div className="flex flex-1 items-center justify-end pr-9">
         {user ? (
           <Link to="/settings">
             <img className="w-10 h-10 rounded-full object-cover cursor-pointer" src={PF + user.profilePic} alt="" />

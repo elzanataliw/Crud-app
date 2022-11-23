@@ -2,7 +2,7 @@ import Lookist from "../../assets/lookist.png"
 
 export default function Header() {
   return (
-    <div className="mt-14">
+    <div className="mt-1">
       <div className=" x-auto ">
         <img src={Lookist} alt="" className="mx-auto object-contain scale-75" />
       </div>
