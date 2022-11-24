@@ -1,5 +1,15 @@
-import SinglePost from "../single-post/Singlepost";
+import Post from "../post/Post";
 
+<<<<<<< HEAD
+export default function Posts({ posts }) {
+  return (
+    <div className="posts flex flex-wrap m-5">
+      {posts.map((p) => (
+        <Post post={p} />
+      ))}
+    </div>
+  );
+=======
 export default function Posts() {
     return (
         <div className="flex m-5 flex-wrap flex-9">
@@ -10,4 +20,5 @@ export default function Posts() {
             <SinglePost img="https://images.pexels.com/photos/4916559/pexels-photo-4916559.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" />
         </div>
     );
+>>>>>>> 9efcbba05924aae88961082f77ff8059e5b3d5fc
 }
