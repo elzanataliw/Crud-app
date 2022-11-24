@@ -11,7 +11,8 @@ module.exports = {
         'kuning': '#FFD34E',
         'putih-abu': '#E3E0FA',
         'biru-muda': '#92B4EC',
-        'putih': '#FFFFFF'
+        'putih': '#FFFFFF',
+        'button':'#647593'
       },
       fontFamily: {
         poppins: "'Poppins', sans-serif",
