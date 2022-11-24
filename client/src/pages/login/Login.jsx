@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import NavBar from "../../components/navbar/NavBar";
 import Lookist from "../../assets/lookist.png"
-import "./login.css";
+
 
 export default function Login() {
   const userRef = useRef();
@@ -29,20 +29,20 @@ export default function Login() {
     <>
       <div className="BackgroundRegisterLogin object-contain bg-fixed fixed w-screen h-screen" >
         <NavBar />
-        <div className="items-start px-5 justify-center h-[500px] w-[450px] bg-white top-1/2 left-1/2 relative -translate-x-1/2 -translate-y-1/2 bg-opacity-30 rounded-xl border ">
+        <div className="items-start px-5 justify-center h-[480px] w-[450px] bg-white top-1/2 left-1/2 relative -translate-x-1/2 -translate-y-[290px] bg-opacity-30 rounded-xl border ">
           <img src={Lookist} alt="" className="scale-[0.70] mx-auto" />
           <form className="flex flex-col mt-0 w-[400px] mx-auto" onSubmit={handleSubmit}>
             <label className="mt-4">Username</label>
             <input
               type="text"
-              className="loginInput"
+              className="rounded-md text-black p-3"
               placeholder="Enter your username..."
               ref={userRef}
             />
             <label className="mt-4">Password</label>
             <input
               type="password"
-              className="loginInput"
+              className="rounded-md text-black p-3"
               placeholder="Enter your password..."
               ref={passwordRef}
             />

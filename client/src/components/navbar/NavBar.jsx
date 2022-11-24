@@ -16,7 +16,7 @@ export default function NavBar() {
         <img src={L} alt="" className="scale-90" />
       </div>
       <div className="flex-auto">
-        <ul className="flex space-x-5 justify-center m-0 p-0 font-light text-lg">
+        <ul className="flex space-x-5 justify-center m-0 p-0 font-medium text-lg">
           <li className="cursor-pointer hover:text-kuning">
             <Link className="link" to="/">
               HOME
@@ -25,11 +25,6 @@ export default function NavBar() {
           <li className="cursor-pointer hover:text-kuning">
             <Link className="link" to="/">
               ABOUT
-            </Link>
-          </li>
-          <li className="cursor-pointer hover:text-kuning">
-            <Link className="link" to="/">
-              CONTACT
             </Link>
           </li>
           <li className="cursor-pointer hover:text-kuning">
@@ -48,7 +43,7 @@ export default function NavBar() {
             <img className="w-10 h-10 rounded-full object-cover cursor-pointer" src={PF + user.profilePic} alt="" />
           </Link>
         ) : (
-          <ul className="flex space-x-5 justify-center m-0 p-0 font-light text-lg">
+          <ul className="flex space-x-5 justify-center m-0 p-0 font-medium text-lg">
             <li className="cursor-pointer hover:text-kuning">
               <Link className="link" to="/login">
                 LOGIN
