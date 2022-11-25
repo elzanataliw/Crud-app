@@ -11,16 +11,17 @@ module.exports = {
         'kuning': '#FFD34E',
         'putih-abu': '#E3E0FA',
         'biru-muda': '#92B4EC',
-        'putih': '#FFFFFF'
+        'abu-abu': '#40424D',
+        'biru-tombol': '#647593'
       },
       fontFamily: {
-        poppins: "'Poppins', sans-serif",
-        playfair: "'Playfair Display', serif;"
+        poppins: ['"Poppins"', 'sans-serif'],
+        playfair: ['"Playfair Display"', 'serif']
       },
-      fontSize:{
-        'judul1':['40px','45px'],
-        'judul2':['20px','22px'],
-        'teks1':['15px','17px']
+      fontSize: {
+        'judul1': ['40px', '45px'],
+        'judul2': ['20px', '22px'],
+        'teks1': ['15px', '17px']
       },
       backgroundImage: {
         'l-pattern': "url('/src/assets/background.png')"
